@@ -11,12 +11,30 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <style>
+      /* Sidebar toggle (pure CSS) */
+      #sidebar-toggle:checked ~ .sidebar {
+        transform: translateX(0);
+      }
+    </style>
   </head>
 
   <body class="bg-gray-200 min-h-screen overflow-x-hidden">
+    <!-- SIDEBAR TOGGLE -->
+    <input type="checkbox" id="sidebar-toggle" class="hidden" />
+
     <!-- HEADER -->
-    <header class="h-16 bg-white flex items-center px-4 border-b gap-3">
-      <div class="font-bold text-lg md:w-[170px]">DUKA</div>
+    <header class="h-16 bg-white flex items-center gap-3 px-3 border-b">
+      <!-- Hamburger (mobile only) -->
+      <label
+        for="sidebar-toggle"
+        class="md:hidden text-gray-600 text-lg cursor-pointer"
+      >
+        <i class="fa fa-bars"></i>
+      </label>
+
+      <div class="font-bold text-lg w-[100px] md:w-[170px]">DUKA</div>
 
       <!-- Search -->
       <div class="relative flex-1 max-w-full md:max-w-[380px]">
@@ -25,13 +43,13 @@
         ></i>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search or type a command"
           class="w-full bg-gray-200 rounded-lg pl-9 pr-3 py-2 text-xs focus:outline-none"
         />
       </div>
 
-      <!-- Icons (hidden on mobile) -->
-      <div class="ml-auto hidden sm:flex items-center gap-4 text-gray-600">
+      <!-- Icons -->
+      <div class="flex items-center gap-3 text-gray-600 text-sm">
         <i class="fa fa-plus"></i>
         <i class="fa fa-bell"></i>
         <i class="fa fa-pencil"></i>
@@ -40,10 +58,11 @@
     </header>
 
     <!-- APP LAYOUT -->
-    <div class="flex flex-col md:flex-row min-h-[calc(100vh-64px)]">
-      <!-- SIDEBAR (desktop only) -->
+    <div class="flex min-h-[calc(100vh-64px)] relative">
+      <!-- SIDEBAR -->
       <aside
-        class="hidden md:flex md:w-[170px] bg-white border-r p-3 flex-col justify-between"
+        class="sidebar fixed md:static inset-y-0 left-0 z-40 w-[170px] bg-white border-r p-3 flex flex-col justify-between
+        transform -translate-x-full md:translate-x-0 transition-transform duration-300"
       >
         <nav class="space-y-2 text-sm">
           <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100">
@@ -73,12 +92,12 @@
         </div>
       </aside>
 
-      <!-- MAIN -->
+      <!-- MAIN + RIGHT -->
       <main class="flex-1 p-4 overflow-y-auto">
         <h1 class="text-xl font-semibold mb-4">Dashboard</h1>
 
         <div class="flex flex-col lg:flex-row gap-4">
-          <!-- LEFT CONTENT -->
+          <!-- LEFT -->
           <div class="flex-1 space-y-4">
             <!-- OVERVIEW -->
             <div class="bg-white p-4 rounded-lg space-y-6">
@@ -111,47 +130,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- TEAM -->
-              <div>
-                <h2 class="text-lg font-semibold mb-3">
-                  Welcome to our new online experience
-                </h2>
-
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-                  <div>
-                    <img
-                      src="https://static.vecteezy.com/system/resources/thumbnails/026/136/046/small_2x/business-man-illustration-ai-generative-png.png"
-                      class="w-12 h-12 mx-auto rounded-full mb-2"
-                    />
-                    <p class="text-sm font-medium">Johnson D.</p>
-                  </div>
-
-                  <div>
-                    <img
-                      src="https://static.vecteezy.com/system/resources/thumbnails/055/669/656/small/a-man-in-a-blue-shirt-is-holding-a-laptop-png.png"
-                      class="w-12 h-12 mx-auto rounded-full mb-2"
-                    />
-                    <p class="text-sm font-medium">Didinya J.</p>
-                  </div>
-
-                  <div>
-                    <img
-                      src="https://static.vecteezy.com/system/resources/thumbnails/041/642/170/small/ai-generated-portrait-of-handsome-smiling-young-man-with-folded-arms-isolated-free-png.png"
-                      class="w-12 h-12 mx-auto rounded-full mb-2"
-                    />
-                    <p class="text-sm font-medium">Penny L.</p>
-                  </div>
-
-                  <div>
-                    <img
-                      src="https://static.vecteezy.com/system/resources/thumbnails/026/136/046/small_2x/business-man-illustration-ai-generative-png.png"
-                      class="w-12 h-12 mx-auto rounded-full mb-2"
-                    />
-                    <p class="text-sm font-medium">Elon M.</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <!-- CHART -->
@@ -164,7 +142,7 @@
               </div>
 
               <div class="overflow-x-auto">
-                <div class="min-w-[500px] h-[140px] flex items-end gap-3">
+                <div class="min-w-[520px] h-[140px] flex items-end gap-3">
                   <div class="w-6 h-[75%] bg-indigo-500 rounded"></div>
                   <div class="w-6 h-[80%] bg-indigo-500 rounded"></div>
                   <div class="w-6 h-[90%] bg-indigo-500 rounded"></div>
@@ -181,10 +159,17 @@
             </div>
           </div>
 
-          <!-- RIGHT PANEL (desktop only) -->
-          <aside class="hidden lg:block lg:w-[250px] bg-white rounded-lg p-4"></aside>
+          <!-- RIGHT PANEL (VISIBLE ON MOBILE) -->
+          <aside class="w-full lg:w-[250px] bg-white rounded-lg p-4">
+            <h2 class="font-semibold mb-2">Right Panel</h2>
+            <p class="text-sm text-gray-600">
+              This panel stays visible on mobile and desktop.
+            </p>
+          </aside>
         </div>
       </main>
     </div>
   </body>
 </html>
+
+
