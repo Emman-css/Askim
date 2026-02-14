@@ -3,225 +3,179 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Duka</title>
-
+    <title>My Valentine</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <style>
-      /* Sidebar toggle (pure CSS) */
-      #sidebar-toggle:checked ~ .sidebar {
-        transform: translateX(0);
-      }
-    </style>
   </head>
 
-  <body class="bg-gray-200 min-h-screen overflow-x-hidden">
-    <!-- SIDEBAR TOGGLE -->
-    <input type="checkbox" id="sidebar-toggle" class="hidden" />
+  <body
+    class="p-2 bg-[url('images/Background.png')] bg-cover bg-center bg-no-repeat min-h-screen"
+  >
 
-    <!-- HEADER -->
-    <header class="h-16 bg-white flex items-center gap-3 px-3 border-b">
-      <!-- Hamburger (mobile only) -->
-      <label
-        for="sidebar-toggle"
-        class="md:hidden text-gray-600 text-lg cursor-pointer"
+
+
+
+<div class="  rounded-2xl border-2">
+        <div class="h-[150px] items-center justify center flex">
+      <p
+        class="items-center flex text-l font-bold justify-center text-center text-rose-100 italic leading-relaxed"
       >
-        <i class="fa fa-bars"></i>
-      </label>
-
-      <div class="font-bold text-lg w-[100px] md:w-[170px]">DUKA</div>
-
-      <!-- Search -->
-      <div class="relative flex-1 max-w-full md:max-w-[380px]">
-        <i
-          class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm"
-        ></i>
-        <input
-          class="w-full bg-gray-200 rounded-lg pl-9 pr-3 py-2 text-xs focus:outline-none max-w-[90vw] mx-auto md:max-w-full"
-        />
-      </div>
-
-      <!-- Icons -->
-      <div class="flex items-center gap-3 text-gray-600 text-sm">
-        <i class="fa fa-plus"></i>
-        <i class="fa fa-bell"></i>
-        <i class="fa fa-pencil"></i>
-        <i class="fa fa-user"></i>
-      </div>
-    </header>
-
-    <!-- APP LAYOUT -->
-    <div class="flex min-h-[calc(100vh-64px)] relative">
-      <!-- SIDEBAR -->
-      <aside
-        class="sidebar fixed md:static inset-y-0 left-0 z-40 w-[170px] bg-white border-r p-3 flex flex-col justify-between transform -translate-x-full md:translate-x-0 transition-transform duration-300"
-      >
-        <nav class="space-y-2 text-sm">
-          <a
-            class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100"
-          >
-            <i class="fa fa-home"></i> Home
-          </a>
-          <a
-            class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100"
-          >
-            <i class="fa fa-cubes"></i> Products
-          </a>
-          <a
-            class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100"
-          >
-            <i class="fa fa-users"></i> Customers
-          </a>
-          <a
-            class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100"
-          >
-            <i class="fa fa-shopping-cart"></i> Shop
-          </a>
-          <a
-            class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100"
-          >
-            <i class="fa fa-dollar-sign"></i> Income
-          </a>
-        </nav>
-
-        <div class="space-y-2 text-sm">
-          <button
-            class="w-full flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100"
-          >
-            <i class="fa fa-question-circle"></i> Help
-          </button>
-          <button
-            class="w-full flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100"
-          >
-            <i class="fa fa-right-from-bracket"></i> Logout
-          </button>
-        </div>
-      </aside>
-
-      <!-- MAIN + RIGHT -->
-      <main class="flex-1 p-4 overflow-y-auto">
-        <h1 class="text-xl font-semibold mb-4">Dashboard</h1>
-
-        <div class="flex flex-col lg:flex-row gap-4">
-          <!-- LEFT -->
-          <div class="flex-1 space-y-4">
-            <!-- OVERVIEW -->
-            <div class="bg-white p-4 rounded-lg space-y-6">
-              <div class="flex justify-between items-center">
-                <h2 class="font-semibold">Overview</h2>
-                <button class="bg-gray-200 px-4 py-1 rounded text-sm">
-                  All time
-                </button>
-              </div>
-
-              <!-- STATS -->
-              <div class="flex flex-col sm:flex-row gap-3">
-                <div class="flex-1 bg-gray-100 rounded-xl p-4">
-                  <p class="text-sm text-gray-600">Customers</p>
-                  <div class="flex justify-between items-center">
-                    <p class="text-lg font-semibold">10,230</p>
-                    <span class="bg-green-400 text-xs px-2 py-1 rounded-full">
-                      8%
-                    </span>
-                  </div>
-                </div>
-
-                <div class="flex-1 bg-gray-100 rounded-xl p-4">
-                  <p class="text-sm text-gray-600">Income</p>
-                  <div class="flex justify-between items-center">
-                    <p class="text-lg font-semibold">$39,100,230</p>
-                    <span class="bg-green-400 text-xs px-2 py-1 rounded-full">
-                      8%
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- CHART -->
-            <div class="bg-white p-4 rounded-lg">
-              <div class="flex justify-between items-center mb-4">
-                <h2 class="font-semibold">Total Income</h2>
-                <button class="bg-gray-200 px-4 py-1 rounded text-sm">
-                  All time
-                </button>
-              </div>
-
-              <div class="overflow-x-auto">
-                <div class="min-w-[520px] h-[140px] flex gap-[40px]">
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Jan</span>
-                    <div class="w-9 h-[75%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Feb</span>
-                    <div class="w-9 h-[80%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Mar</span>
-                    <div class="w-9 h-[90%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Apr</span>
-                    <div class="w-9 h-[65%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">May</span>
-                    <div class="w-9 h-[75%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Jun</span>
-                    <div class="w-9 h-[45%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Jul</span>
-                    <div class="w-9 h-[65%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Aug</span>
-                    <div class="w-9 h-[80%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Sep</span>
-                    <div class="w-9 h-[70%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse items-center">
-                    <span class="text-xs mt-1">Oct</span>
-                    <div class="w-9 h-[40%] bg-indigo-500 rounded"></div>
-                  </div>
-
-                  <div class="flex flex-col-reverse h-[140px] items-center">
-                    <span class="text-xs mt-1">Nov</span>
-                    <div class="w-9 h-[30%] bg-indigo-500 rounded"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- RIGHT PANEL (VISIBLE ON MOBILE) -->
-          <aside class="w-full lg:w-[250px] bg-white rounded-lg p-4">
-            <h2 class="font-semibold mb-2">Right Panel</h2>
-            <p class="text-sm text-gray-600">
-              This panel stays visible on mobile and desktop.
-            </p>
-          </aside>
-        </div>
-      </main>
+        By the fact that you're on this page , it means you chose yes <br />
+        I have some few memories and some two cute ones I know you'll really
+        Love I hope this put a smile on your face
+      </p>
     </div>
+
+  <!-- GALLERY -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4 max-w-6xl mx-auto">
+
+  <img src="images/full photo.png" data-caption="Our cute moment ❤️"
+    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+
+  <img src="images/purple judy.jpeg" data-caption="You look beautiful 💜"
+    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+
+  <img src="images/IMG_9738.jpg" data-caption="Special memory ✨"
+    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+
+  <img src="images/potrait us.png" data-caption="Us together 🥰"
+    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+
+  <img src="images/me.jpeg" data-caption="Just me 😎"
+    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+
+  <img src="images/blue judy.jpeg" data-caption="Blue vibes 💙"
+    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+
+    <img src="images/mirror.jpeg" data-caption="Mirror moment 🪞"
+      class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+
+    <img src="images/_DSC1261 (2).jpg" data-caption="Mirror moment 🪞"
+      class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+    
+    <img src="images/call.png" data-caption="light moments 🪞"
+      class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+    
+    <img src="images/laying low.png" data-caption="Sleepy head 🪞"
+      class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
+    
+</div>
+
+
+    <div class="text-center font-serif italic leading-relaxed font-bold mb-[10px] text-rose-100 px-2 py 4 bg--600">
+      <p>I love You Big Dinohoo 💙💙💙💙</p>
+    </div>
+</div>
+
+
+
+<!-- LIGHTBOX -->
+<div id="lightbox"
+  class="fixed inset-0 hidden items-center justify-center z-50 backdrop-blur-lg bg-black/80">
+
+  <!-- close button -->
+  <button id="closeBtn"
+    class="absolute top-6 right-6 text-white text-4xl font-bold">&times;</button>
+
+  <!-- heart animation -->
+  <div id="heart"
+    class="absolute text-6xl hidden animate-ping">❤️</div>
+
+  <!-- image -->
+  <img id="lightbox-img"
+    class="max-w-[90%] max-h-[80%] rounded-xl shadow-lg transition"/>
+
+  <!-- caption -->
+  <p id="caption"
+    class="absolute bottom-10 text-white text-lg"></p>
+
+</div>
+
+<script>
+const images = document.querySelectorAll(".gallery-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const caption = document.getElementById("caption");
+const closeBtn = document.getElementById("closeBtn");
+const heart = document.getElementById("heart");
+
+let currentIndex = 0;
+let scale = 1;
+let slideshow;
+
+// OPEN IMAGE
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    showImage();
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+
+    // heart animation
+    heart.classList.remove("hidden");
+    setTimeout(()=>heart.classList.add("hidden"),800);
+
+    startSlideshow();
+  });
+});
+
+function showImage(){
+  lightboxImg.src = images[currentIndex].src;
+  caption.textContent = images[currentIndex].dataset.caption;
+  scale = 1;
+  lightboxImg.style.transform = "scale(1)";
+}
+
+// CLOSE
+closeBtn.onclick = closeLightbox;
+lightbox.onclick = e => {
+  if(e.target === lightbox) closeLightbox();
+};
+
+function closeLightbox(){
+  lightbox.classList.add("hidden");
+  stopSlideshow();
+}
+
+// SLIDESHOW
+function startSlideshow(){
+  slideshow = setInterval(()=>{
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  }, 4000);
+}
+
+function stopSlideshow(){
+  clearInterval(slideshow);
+}
+
+// SWIPE SUPPORT (PHONE)
+let startX = 0;
+
+lightbox.addEventListener("touchstart", e=>{
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", e=>{
+  let endX = e.changedTouches[0].clientX;
+
+  if(startX - endX > 50){
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  }
+  if(endX - startX > 50){
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  }
+});
+
+// ZOOM (SCROLL / PINCH STYLE)
+lightboxImg.addEventListener("wheel", e=>{
+  e.preventDefault();
+  scale += e.deltaY * -0.001;
+  scale = Math.min(Math.max(.5, scale), 3);
+  lightboxImg.style.transform = `scale(${scale})`;
+});
+</script>
+
   </body>
 </html>
