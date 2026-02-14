@@ -3,179 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Valentine</title>
+    <title>Me and You</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body
-    class="p-2 bg-[url('images/Background.png')] bg-cover bg-center bg-no-repeat min-h-screen"
+    class=" p-2 bg-[url('images/Background.png')] bg-cover bg-center bg-no-repeat min-h-screen "
   >
-
-
-
-
-<div class="  rounded-2xl border-2">
-        <div class="h-[150px] items-center justify center flex">
-      <p
-        class="items-center flex text-l font-bold justify-center text-center text-rose-100 italic leading-relaxed"
+    <div class=" rounded-2xl border-2 h-screen ">
+      <!-- Top Text -->
+      <div
+        class="mt-[40px] mb-[20px] items-center justify-center flex text-center font-serif drop-shadow-lg text-base sm:text-lg md:text-xl italic leading-relaxed text-rose-100 px-4"
       >
-        By the fact that you're on this page , it means you chose yes <br />
-        I have some few memories and some two cute ones I know you'll really
-        Love I hope this put a smile on your face
-      </p>
+        <p>First Valentines away from each other. We just hope for the best</p>
+        <p>I just had this idea, here goes nothing...</p>
+      </div>
+
+      <!-- Center Card -->
+      <div class=" mt-[40px flex flex-1 items-center justify-center px-4">
+        <div
+          class="w-full max-w-lg bg-black/40 p-6 sm:p-8 rounded-2xl border-4 text-rose-100 flex flex-col items-center italic drop-shadow-lg"
+        >
+          <p class="text-2xl sm:text-5xl font-bold text-center">
+            Will You Be My
+          </p>
+
+          <p
+            class="text-xl sm:text-xl md:text-3xl font-bold text-center drop-shadow-lg mt-2"
+          >
+            Valentines Askim
+          </p>
+
+          <p class="text-2xl sm:text-5xl font-bold drop-shadow-lg mt-1">
+            Askim
+          </p>
+
+          <div class="text-lg sm:text-xl flex gap-6 mt-6 items-center">
+            <a href="yes.html">
+              <button
+                class="bg-pink-600 shadow-md text-white px-6 py-2 rounded-lg hover:bg-pink-800 transition"
+              >
+                Yes
+              </button></a
+            >
+
+            <p>or</p>
+
+            <a href="yes.html"
+              ><button
+                class="bg-pink-600 shadow-md text-white px-6 py-2 rounded-lg hover:bg-pink-800 transition"
+              >
+                Yes
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-
-  <!-- GALLERY -->
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4 max-w-6xl mx-auto">
-
-  <img src="images/full photo.png" data-caption="Our cute moment ❤️"
-    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-
-  <img src="images/purple judy.jpeg" data-caption="You look beautiful 💜"
-    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-
-  <img src="images/IMG_9738.jpg" data-caption="Special memory ✨"
-    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-
-  <img src="images/potrait us.png" data-caption="Us together 🥰"
-    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-
-  <img src="images/me.jpeg" data-caption="Just me 😎"
-    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-
-  <img src="images/blue judy.jpeg" data-caption="Blue vibes 💙"
-    class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-
-    <img src="images/mirror.jpeg" data-caption="Mirror moment 🪞"
-      class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-
-    <img src="images/_DSC1261 (2).jpg" data-caption="Mirror moment 🪞"
-      class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-    
-    <img src="images/call.png" data-caption="light moments 🪞"
-      class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-    
-    <img src="images/laying low.png" data-caption="Sleepy head 🪞"
-      class="gallery-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer"/>
-    
-</div>
-
-
-    <div class="text-center font-serif italic leading-relaxed font-bold mb-[10px] text-rose-100 px-2 py 4 bg--600">
-      <p>I love You Big Dinohoo 💙💙💙💙</p>
-    </div>
-</div>
-
-
-
-<!-- LIGHTBOX -->
-<div id="lightbox"
-  class="fixed inset-0 hidden items-center justify-center z-50 backdrop-blur-lg bg-black/80">
-
-  <!-- close button -->
-  <button id="closeBtn"
-    class="absolute top-6 right-6 text-white text-4xl font-bold">&times;</button>
-
-  <!-- heart animation -->
-  <div id="heart"
-    class="absolute text-6xl hidden animate-ping">❤️</div>
-
-  <!-- image -->
-  <img id="lightbox-img"
-    class="max-w-[90%] max-h-[80%] rounded-xl shadow-lg transition"/>
-
-  <!-- caption -->
-  <p id="caption"
-    class="absolute bottom-10 text-white text-lg"></p>
-
-</div>
-
-<script>
-const images = document.querySelectorAll(".gallery-img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const caption = document.getElementById("caption");
-const closeBtn = document.getElementById("closeBtn");
-const heart = document.getElementById("heart");
-
-let currentIndex = 0;
-let scale = 1;
-let slideshow;
-
-// OPEN IMAGE
-images.forEach((img, index) => {
-  img.addEventListener("click", () => {
-    currentIndex = index;
-    showImage();
-    lightbox.classList.remove("hidden");
-    lightbox.classList.add("flex");
-
-    // heart animation
-    heart.classList.remove("hidden");
-    setTimeout(()=>heart.classList.add("hidden"),800);
-
-    startSlideshow();
-  });
-});
-
-function showImage(){
-  lightboxImg.src = images[currentIndex].src;
-  caption.textContent = images[currentIndex].dataset.caption;
-  scale = 1;
-  lightboxImg.style.transform = "scale(1)";
-}
-
-// CLOSE
-closeBtn.onclick = closeLightbox;
-lightbox.onclick = e => {
-  if(e.target === lightbox) closeLightbox();
-};
-
-function closeLightbox(){
-  lightbox.classList.add("hidden");
-  stopSlideshow();
-}
-
-// SLIDESHOW
-function startSlideshow(){
-  slideshow = setInterval(()=>{
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage();
-  }, 4000);
-}
-
-function stopSlideshow(){
-  clearInterval(slideshow);
-}
-
-// SWIPE SUPPORT (PHONE)
-let startX = 0;
-
-lightbox.addEventListener("touchstart", e=>{
-  startX = e.touches[0].clientX;
-});
-
-lightbox.addEventListener("touchend", e=>{
-  let endX = e.changedTouches[0].clientX;
-
-  if(startX - endX > 50){
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage();
-  }
-  if(endX - startX > 50){
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage();
-  }
-});
-
-// ZOOM (SCROLL / PINCH STYLE)
-lightboxImg.addEventListener("wheel", e=>{
-  e.preventDefault();
-  scale += e.deltaY * -0.001;
-  scale = Math.min(Math.max(.5, scale), 3);
-  lightboxImg.style.transform = `scale(${scale})`;
-});
-</script>
-
   </body>
 </html>
